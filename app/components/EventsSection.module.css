@@ -1,0 +1,235 @@
+.eventsSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.sectionTitle {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #8CE2ED;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.eventsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.eventCard {
+  position: relative;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #1a1a24;
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .eventCard:nth-child(4n - 3) {
+    grid-column: span 2;
+  }
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cardImageContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.eventImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.eventCard:hover .cardImage,
+.eventCard:hover .eventImage {
+  transform: scale(1.1);
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(10, 10, 15, 0.95) 0%, rgba(10, 10, 15, 0) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.allEventsCard {
+  background-color: #1b1b2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.allEventsCard:hover {
+  border-color: rgba(140, 226, 237, 0.4);
+}
+
+.allEventsText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.viewAllBtn {
+  background-color: #8CE2ED;
+  color: #0a0a0f;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.viewAllBtn:hover {
+  background-color: #6bcad6;
+}
+
+/* --- Modal Styles --- */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  background-color: #1a1a24;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modalImagePlaceholder {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #2a2a35, #1a1a24);
+}
+
+.modalImageContainer {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.modalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modalBody {
+  padding: 2.5rem;
+}
+
+.modalTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #8CE2ED;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.modalDate {
+  font-size: 0.9rem;
+  color: #a0a0b0;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modalDescription {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.7;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

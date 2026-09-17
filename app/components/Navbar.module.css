@@ -1,0 +1,98 @@
+.navWrapper {
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 50;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(20, 20, 25, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+}
+
+.navLogoImg {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0 1rem;
+}
+
+.navLink {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  font-weight: 500;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.navLink:hover, .navLink.active {
+  color: var(--text-color);
+}
+
+.navDivider {
+  width: 1px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.joinBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.joinBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.signInBtn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}

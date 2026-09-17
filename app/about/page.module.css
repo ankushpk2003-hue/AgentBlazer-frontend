@@ -1,0 +1,144 @@
+.aboutSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 6rem auto 2rem auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Two Column Layout */
+.heroGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .heroGrid {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+/* Left side: Hologram */
+.heroVisual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* Make the hologram container larger */
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+}
+
+.heroVisual > div {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+/* Right side: Typography */
+.heroContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.eyebrow {
+  font-family: monospace;
+  font-size: 1rem;
+  color: #00FFFF; /* Using our cyan instead of lime green */
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.mainHeading {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.mainHeading span {
+  /* Using the existing Agent Blazer gradient */
+  background: linear-gradient(to right, #00FFFF, #8A2BE2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--muted-text);
+  margin-bottom: 1.5rem;
+}
+
+/* Statistics Bar */
+.statsBar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: rgba(20, 20, 25, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  /* Glowing bottom border matching the reference style */
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #00FFFF, #8A2BE2) 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .statsBar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 768px) {
+  .statItem {
+    border-bottom: none;
+  }
+  .statItem:last-child {
+    border-right: none;
+  }
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
