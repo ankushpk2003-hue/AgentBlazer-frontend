@@ -16,7 +16,7 @@ export default function Navbar() {
         <div className={styles.navLinks}>
           <Link href="/" className={`${styles.navLink} ${pathname === '/' ? styles.active : ''}`}>Home</Link>
           <Link href="/events" className={`${styles.navLink} ${pathname === '/events' ? styles.active : ''}`}>Events</Link>
-          <Link href="#" className={styles.navLink}>Team</Link>
+          <Link href="/team" className={`${styles.navLink} ${pathname === '/team' ? styles.active : ''}`}>Team</Link>
           <Link href="/about" className={`${styles.navLink} ${pathname === '/about' ? styles.active : ''}`}>About</Link>
         </div>
         <div className={styles.navActions}>
